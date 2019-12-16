@@ -1,0 +1,22 @@
+
+1. Editors 
+2. Categories 
+3. News
+4. Comments 
+
+SDLC
+1. Requirement gathering
+	a. SRS document 
+2. Analysis
+3. Design
+	1. ERD Database design 
+	2. Wire framing 
+	3. Class diagram
+	4. Flow diagram (Flowchart)
+
+
+
+4. Coding / Development
+
+5. Testing & 		Deployment
+   Automation 		DevOps
