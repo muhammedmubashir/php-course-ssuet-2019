@@ -1,0 +1,24 @@
+Laravel
+
+Composer.org
+exe
+
+composer intall --dist
+
+ubuntu
+sudo apt-get update
+sudo apt-get install composer
+
+laravel.com/docs
+unit testing
+integration testing
+dependency testing
+
+composer update
+
+
+package manager
+
+
+
+Less Sass -> css generators

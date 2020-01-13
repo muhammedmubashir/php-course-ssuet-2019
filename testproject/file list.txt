@@ -1,0 +1,12 @@
+
+FILE LIST
+
+testproject/app/Http/Controllers/comapany.php
+testproject/routes/web.php
+testproject/Laravel.txt
+testproject/resources/views/services.blade.php
+testproject/resources/views/aboutus.blade.php
+testproject/resources/views/welcome.blade.php
+
+
+
