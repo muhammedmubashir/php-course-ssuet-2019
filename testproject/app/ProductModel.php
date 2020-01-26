@@ -15,6 +15,15 @@ use Illuminate\Database\Eloquent\Model;
 class ProductModel extends Model
 {
     //
-    protected $table 		= "";
-    protected $primaryKey 	= "";
+    protected $table 		= "products";
+    protected $primaryKey 	= "product_id";
+
+    // everyproduct belongsto Category
+
+    function category()
+    {
+    	return $this->belongsTo("App\CategoryModel","category_id");
+    }
+
+
 }

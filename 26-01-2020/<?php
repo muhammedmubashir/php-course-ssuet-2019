@@ -1,0 +1,16 @@
+<?php
+class abc
+{
+	public $id;
+
+	function insert($value)
+	{
+		$id = $value;
+	}
+
+	function show()
+	{
+		echo "id has value".$id;
+	}
+}
+?>

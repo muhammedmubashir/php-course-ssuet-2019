@@ -10,4 +10,14 @@ class CategoryModel extends Model
     //
     protected $table 		= "categories";
     protected $primaryKey 	= "category_id";
+
+    // onecategoryhasmanyproducts
+
+    function products()
+    {
+    	return $this->hasMany("App\ProductModel","category_id");
+    	// hasOne
+    	// hasManyToMany
+    }
+
 }

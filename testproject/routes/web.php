@@ -32,3 +32,4 @@ Route::get("/services","company@services");
 Route::get("/aboutus","company@aboutus");
 
 Route::get("/productcategories","categories@list");
+Route::get("/products/{id}","categories@products");
