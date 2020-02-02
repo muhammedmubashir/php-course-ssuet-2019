@@ -33,3 +33,10 @@ Route::get("/aboutus","company@aboutus");
 
 Route::get("/productcategories","categories@list");
 Route::get("/products/{id}","categories@products");
+
+
+// Route::get("category/list","categories@list");
+// Route::get("category/create","categories@create");
+// Route::post("category/store","categories@store");
+
+Route::resource("category","categories");

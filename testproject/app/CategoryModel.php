@@ -10,6 +10,7 @@ class CategoryModel extends Model
     //
     protected $table 		= "categories";
     protected $primaryKey 	= "category_id";
+    public $timestamps      = false;
 
     // onecategoryhasmanyproducts
 
