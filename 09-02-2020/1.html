@@ -1,0 +1,28 @@
+<!-- Introduction to VUE -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="assets/js/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<h1>Product Name</h1>
+		<h2>{{ product }}</h2>
+	</div>
+
+</body>
+<script type="text/javascript">
+	// $obj = new classname(); php
+	// var obj = new classname();
+	var app = new Vue({
+		el: "#app", //element
+		data: {
+			product: "iPhone 7"
+		}
+	});
+</script>
+</html>

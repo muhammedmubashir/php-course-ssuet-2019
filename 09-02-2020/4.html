@@ -1,0 +1,73 @@
+<!--conditional rendering -->
+<!--array values using loops -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="assets/js/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<img :src="image" >
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold, less stock</p>
+				<p v-else>Out of stock</p>
+				<!-- foreach($array as $variable)
+				$variable in $array -->
+				<ul>
+					<li v-for="spec in specifications">{{ spec }}</li>
+				</ul>
+
+				<div v-for="color in variantColors" :key="color.colorID">
+					<p>{{ color.colorOption }}</p>
+				</div>
+
+			</div>
+
+			
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			product: 'iPhone',
+			image: 'assets/images/iphone-red.jpeg',
+			inventory: 80,
+			specifications: ["64 GB", "2GB RAM","5.5 Inch Display"],
+			
+			variantColors: [
+							{
+								colorID: 1,
+								colorOption: "Red"
+							},
+							{
+								colorID: 2,
+								colorOption: "Gray"
+							}
+						   ],
+			variantStorage: [
+							{
+								storageID: 1,
+								storageOption: "64GB"
+							},
+							{
+								storageID: 2,
+								storageOption: "128GB"
+							}
+						   ],
+		}
+	});
+</script>
+</html>
