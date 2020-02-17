@@ -1,0 +1,118 @@
+<!--Style Binding -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="assets/js/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<img :src="image" >
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold, less stock</p>
+				<p v-else>Out of stock</p>
+
+				<ul>
+					<li v-for="spec in specifications">{{ spec }}</li>
+				</ul>
+				<!--previous div -->
+				<!-- <div v-for="option in variantOptions" 
+					:key="option.variantID">
+					<p v-on:click="updateImage(option.imageOption)">
+						{{ option.colorOption }}
+					</p>
+				</div> -->
+				<!-- New Div -->
+				<!-- <p style="background-color: yellow; ">ABC</p> -->
+				<div v-for="option in variantOptions" 
+					 :key="option.variantID"
+					 :style="{ backgroundColor: option.colorOption }"
+					 class="color-box"
+					 v-on:click="updateImage(option.imageOption)" >
+					
+				</div>
+
+				<div class="cart">
+					<p> Cart ({{ cart }})</p>
+				</div>
+				<!-- Previous button -->
+				<!-- <div>
+					<button v-on:click="addToCart">
+						Add to cart
+					</button>
+				</div> -->
+				<!-- New button -->
+				<!-- disabled vs readonly -->
+				<!-- <div>
+				<input type="text">
+				</div> -->
+				<!-- <select>
+					<option>--select--</option>
+					<option>Khi</option>
+					<option disabled="disabled">Lhr</option>
+					<option disabled="disabled">ISL</option>
+				</select> -->
+				<div>
+				<!-- <input type="text" name="xyz" disabled="disabled"> -->
+				<!-- <button disabled="disabled" class="disabledButton">Compare	</button> -->
+					<button v-on:click="addToCart" 
+							:disabled="!inStock"
+							:class="{ disabledButton: !inStock }">
+						Add to cart
+					</button>
+				</div>
+
+			</div>
+
+			
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			product: 'iPhone',
+			image: 'assets/images/iphone-red.jpg',
+			inventory: 80,
+			inStock: false,
+			specifications: ["64 GB", "2GB RAM","5.5 Inch Display"],
+			variantOptions: [
+							{
+								variantID: 1,
+								colorOption: "Red",
+								imageOption: 'assets/images/iphone-red.jpg',
+
+							},
+							{
+								variantID: 2,
+								colorOption: "Gray",
+								imageOption: 'assets/images/iphone-gray.png',
+
+							}
+						   ],
+			cart: 0,
+		},
+		methods: {
+			addToCart()
+			{
+				this.cart += 1
+			},
+			updateImage(newImage)
+			{
+				this.image = newImage
+			}
+		}
+	});
+</script>
+</html>

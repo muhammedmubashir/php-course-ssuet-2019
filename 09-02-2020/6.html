@@ -1,0 +1,112 @@
+<!--Event handling -->
+<!-- Jeffrey way 
+CI
+jquery
+laravel
+
+Server management
+Samnan
+
+
+ devOps
+ youtube
+
+ AWS
+ load balancing
+ youtube
+
+ vuejs
+ youtube
+
+ 	
+ stackoverflow
+SDLC
+1. requirement -> BD
+2. Analysis -> BOSS
+3. Design 99% -> APP
+4. Coding -> APP
+5. Testing & Deployment -> QA & APP
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../dist/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<img :src="image" >
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold, less stock</p>
+				<p v-else>Out of stock</p>
+
+				<ul>
+				<li v-for="spec in specifications">{{ spec }}</li>
+				</ul>
+
+				<div v-for="option in variantOptions" :key="option.variantID">
+					<p v-on:click="updateImage(option.imageOption)" style="cursor: pointer;">{{ option.colorOption }}</p>
+				</div>
+
+				<div class="cart">
+					<p> Cart ({{ cart }})</p>
+				</div>
+
+				<div>
+					<button v-on:click="addToCart">Add to cart</button>
+				</div>
+
+			</div>
+
+			
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			product: 'iPhone',
+			image: 'assets/images/iphone-red.jpg',
+			inventory: 80,
+			specifications: ["64 GB", "2GB RAM","5.5 Inch Display"],
+			variantOptions: [
+							{
+								variantID: 1,
+								colorOption: "Red",
+								imageOption: 'assets/images/iphone-red.jpg',
+
+							},
+							{
+								variantID: 2,
+								colorOption: "Gray",
+								imageOption: 'assets/images/iphone-gray.png',
+
+							}
+						   ],
+			cart: 0,
+		},
+		methods: {
+			addToCart()
+			{
+				this.cart += 1
+			},
+			updateImage(newImage)
+			{
+				this.image = newImage
+			}
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!--conditional rendering -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="assets/js/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<img v-bind:src="image" >
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+				<p>Stock ({{ inventory }})</p>
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold, less stock</p>
+				<p v-else>Out of stock</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	// var app = new Vue({
+	// 	el: "#app",
+	// 	data: {
+	// 		product: 'iPhone',
+	// 		image: 'assets/images/1.jpg',
+	// 		instock: true
+	// 	}
+	// });
+	
+	var app = new Vue({
+		el: "#app",
+		data: {
+			product: 'iPhone',
+			image: 'assets/images/iphone-red.jpeg',
+			inventory: 100
+		}
+	});
+</script>
+</html>
+
+
+variable define
+attribute binding
+conditional rendering

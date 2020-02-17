@@ -1,0 +1,53 @@
+array[0][id] = 1
+array[0][color] = red
+array[0][image] = "redImage.jpg"
+
+array[1][id] = 2
+array[1][color] = gray
+array[1][image] = "grayImage.jpg"
+
+
+
+
+Product
+
+variantOptions: [
+					{
+						variantID: 1,
+						colorOption: "Red",
+						imageOption: 'assets/images/iphone-red.jpg',
+						quantityOption: 20
+
+					},
+					{
+						variantID: 2,
+						colorOption: "gray",
+						imageOption: 'assets/images/iphone-gray.jpg',
+						quantityOption: 10
+
+					}
+				]
+
+
+	variantOtions[clicked->index].colorOption //gray
+	this.variantOtions[this.clickedIndex].imageOption //image
+
+this.variantOptions[this.selectedVariant].imageOption
+
+
+
+
+<div v-for="(option,index) in variantOptions" 
+					 :key="option.variantID"
+					 :style="{ backgroundColor: option.colorOption }"
+					 class="color-box"
+					 v-on:click="updateImage(index)" >
+
+$array[0] = ["red","red_image","20"];
+$array[1] = ["gray","gray_image","10"];
+foreach($array as $index => $value)
+{
+	echo $index . $value;
+}
+
+CEP office -> 0213-4800420

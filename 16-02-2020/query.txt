@@ -1,0 +1,34 @@
+categories
+no product in category
+cart
+
+select
+  c.category_id as parent_cat_id,
+  c.name as parent_name,
+  c.parent_id as parent_parent_id,
+  
+  cc.category_id as child_cat_id,
+  cc.name as child_name,
+  cc.parent_id as child_parent_id
+  from categories as c
+  left join categories as cc
+  on c.category_id = cc.parent_id;
+
+  if(count($product_array) == 0)
+  {
+  	echo "No product in this category";
+  }
+
+$model = App\Flight::findOrFail(1);
+
+$model = App\Flight::where('legs', '>', 100)->firstOrFail();
+
+
+
+https://laravel.com/docs/6.x/session#storing-data
+
+
+
+<a href="products/categoryid">CategoryName</a>
+
+product($category)

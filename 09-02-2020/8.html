@@ -1,0 +1,111 @@
+<!--Computed Properties -->
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../dist/vue.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>VUE Practice</title>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<img :src="image" >
+			</div>
+			<div class="product-info">
+				<!-- <h1>{{ brand }} {{ product }}</h1> -->
+				<h1>{{ title }}</h1>
+				<p v-if="inventory > 10">In stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Almost sold, less stock</p>
+				<p v-else>Out of stock</p>
+
+				<ul>
+					<li v-for="spec in specifications">{{ spec }}</li>
+				</ul>
+
+				<div v-for="(option, index) in variantOptions" 
+					 :key="option.variantID"
+					 :style="{ backgroundColor: option.colorOption }"
+					 class="color-box"
+					 v-on:click="updateImage(index)" >
+					
+				</div>
+
+				<div class="cart">
+					<p> Cart ({{ cart }})</p>
+				</div>
+
+				<div>
+					<button v-on:click="addToCart" 
+							:disabled="!inStock" 
+							:class="{ disabledButton: !inStock }">
+						Add to cart
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+
+	var app = new Vue({
+		el: "#app",
+		data: {
+			brand: "Apple",
+			product: 'iPhone',
+			selectedVariant: 0,
+			specifications: ["64 GB", "2GB RAM","5.5 Inch Display"],
+			variantOptions: [
+							{
+								variantID: 1,
+								colorOption: "Red",
+								imageOption: 'assets/images/iphone-red.jpg',
+								quantityOption: 20
+
+							},
+							{
+								variantID: 2,
+								colorOption: "Gray",
+								imageOption: 'assets/images/iphone-gray.png',
+								quantityOption: 0
+
+							}
+						   ],
+			cart: 0,
+		},
+		methods: {
+			addToCart()
+			{
+				this.cart += 1
+			},
+			updateImage(index)
+			{
+				this.selectedVariant = index
+				console.log(index)
+			}
+		},
+		computed: {
+			title()
+			{
+				return this.brand + ' ' + this.product
+			},
+			image()
+			{
+				return this.variantOptions[this.selectedVariant].imageOption
+			},
+			inStock()
+			{
+				return this.variantOptions[this.selectedVariant].quantityOption
+			},
+			inventory()
+			{
+				return this.variantOptions[this.selectedVariant].quantityOption
+			}
+		}
+	});
+</script>
+</html>
+

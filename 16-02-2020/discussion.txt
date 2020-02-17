@@ -1,0 +1,61 @@
+$array["red"] = ["memory"=>"64gb","ram"=>"4gb"];
+$array["silver"] = ["memory"=>"128gb","ram"=>"3gb"];
+
+
+echo $array['silver']['ram']; //3gb
+
+
+
+what is javascript
+why js
+
+different frameworks of js
+
+why vue js
+integration with laravel 
+
+
+
+Web Application
+backend programming 
+
+JS 
+
+Menu navigation
+slider 
+form validation
+ajax 
+
+responsive -> js 
+Progressive web 
+
+
+Vue JS
+React JS
+Angular JS -> near to obs -> js library 
+Angular 8-> popular -> MVC framework -> flexiable -> 
+
+Ember js
+backbonejs
+
+
+jQuery
+Typescript -> 
+Nodejs
+
+
+
+js -> wrapper 
+mvc 
+
+Javascript 
+Object oriented programming 
+closure 
+data structure 
+
+
+JS
+obj = document.getElementByID("elementID").value;
+
+jQuery
+$("#elementID")

@@ -50,6 +50,12 @@ class categories extends Controller
 
     function store(Request $request)
     {
+        // $request->session()->put("productid",1);
+        // $request->session()->put("productid",2);
+        // $request->session()->put("productid",3);
+        // $request->session()->put("productid",4);
+        // $request->session()->get("productid");
+
         $postedData = $request->all();   
         // print_r($postedData);die;
         // CSRF
